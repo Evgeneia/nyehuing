@@ -1,0 +1,608 @@
+<!DOCTYPE HTML>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maplestory name generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <style type="text/css">
+        body {
+            margin: 1rem;
+            text-align: center;
+        }
+
+        h5 {
+            margin: 1rem 0 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        .card {
+            margin-top: 1rem;
+            padding: 0 1rem 1rem;
+            text-align: start;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <button id="option" type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#options"
+                aria-expanded="false" aria-controls="options">설정</button>
+            <button id="generate" type="button" class="btn btn-primary" onclick="generateName()">생성</button>
+        </div>
+        <div class="collapse card" id="options">
+            <div>
+                <h5>이름 길이:</h5>
+                <input type="number" id="length" class="form-control" step="1" min="2" max="6" value="2" />
+            </div>
+            <div>
+                <h5>사용하지 않을 초성 <button type="button" class="btn btn-secondary btn-sm"
+                        onclick="clearChoseong()">초기화</button></h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="0" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄱ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="1" name="choseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄲ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="2" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄴ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="3" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄷ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="4" name="choseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄸ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="5" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄹ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="6" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅁ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="7" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅂ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="8" name="choseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅃ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="9" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅅ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="10" name="choseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅆ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="11" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅇ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="12" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅈ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="13" name="choseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅉ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="14" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅊ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="15" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅋ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="16" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅌ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="17" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅍ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="18" name="choseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅎ
+                    </label>
+                </div>
+            </div>
+            <div>
+                <h5>사용하지 않을 중성 <button type="button" class="btn btn-secondary btn-sm"
+                        onclick="clearJoongseong()">초기화</button></h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="0" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅏ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="1" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅐ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="2" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅑ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="3" name="joongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅒ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="4" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅓ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="5" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅔ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="6" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅕ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="7" name="joongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅖ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="8" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅗ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="9" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅘ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="10" name="joongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅙ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="11" name="joongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅚ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="12" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅛ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="13" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅜ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="14" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅝ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="15" name="joongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅞ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="16" name="joongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅟ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="17" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅠ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="18" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅡ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="19" name="joongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅢ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="19" name="joongseong">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅣ
+                    </label>
+                </div>
+            </div>
+            <div>
+                <h5>사용하지 않을 종성 <button type="button" class="btn btn-secondary btn-sm"
+                        onclick="clearJongseong()">초기화</button></h5>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="1" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄱ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="2" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄲ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="3" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄳ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="4" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄴ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="5" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄵ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="6" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄶ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="7" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄷ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="8" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄹ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="9" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄺ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="10" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄻ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="11" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄼ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="12" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄽ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="13" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄾ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="14" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㄿ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="15" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅀ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="16" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅁ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="17" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅂ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="18" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅄ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="19" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅅ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="20" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅆ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="21" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅇ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="22" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅈ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="23" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅊ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="24" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅋ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="25" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅌ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="26" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅍ
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="27" name="jongseong" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        ㅎ
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 1rem;">
+        <div class="row">
+            <div class="col-sm-12 col-md-3">
+                <h1 id="name1"> </h1>
+                <iframe id="iframe1" src=""></iframe>
+                <iframe id="iframe1r" src=""></iframe>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <h1 id="name2"> </h1>
+                <iframe id="iframe2" src=""></iframe>
+                <iframe id="iframe2r" src=""></iframe>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <h1 id="name3"> </h1>
+                <iframe id="iframe3" src=""></iframe>
+                <iframe id="iframe3r" src=""></iframe>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <h1 id="name4"> </h1>
+                <iframe id="iframe4" src=""></iframe>
+                <iframe id="iframe4r" src=""></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var NAME_LENGTH = 2
+        var HATE_CHOSEONG = [1, 4, 8, 10, 13]
+        var HATE_JOONGSEONG = [3, 7, 10, 11, 15, 16, 19]
+        var HATE_JONGSEONG = []
+        var _checked = []
+
+        function clearChoseong() {
+            var _choseong = $("[name=choseong]");
+            for (var i = 0; i < _choseong.length; ++i) {
+                _choseong[i].checked = false;
+            }
+        }
+
+        function clearJoongseong() {
+            var _joongseong = $("[name=joongseong]");
+            for (var i = 0; i < _joongseong.length; ++i) {
+                _joongseong[i].checked = false;
+            }
+        }
+
+        function clearJongseong() {
+            var _jongseong = $("[name=jongseong]");
+            for (var i = 0; i < _jongseong.length; ++i) {
+                _jongseong[i].checked = false;
+            }
+        }
+
+        function createName() {
+            var _name = ""
+            while (_name.length < NAME_LENGTH) {
+                var _c = Math.floor(Math.random() * 11172)
+                if (((_c % 28 == 0 && HATE_JONGSEONG.length == 27) || !HATE_JONGSEONG.includes(_c % 28))
+                    && !HATE_CHOSEONG.includes(Math.floor(Math.floor(_c / 28) / 21))
+                    && !HATE_JOONGSEONG.includes(Math.floor(Math.floor(_c / 28) % 21))) {
+                    _name += String.fromCharCode(44032 + _c)
+                    if(_checked.includes(_name)) {
+                        _name = "";
+                    }
+                }
+            }
+            return _name;
+        }
+
+        function generateName() {
+            if (!validateOption()) {
+                return false;
+            }
+
+            $("#options").collapse("hide");
+
+            var _name1 = createName();
+            var _name2 = createName();
+            var _name3 = createName();
+            var _name4 = createName();
+            $("#name1").text(_name1);
+            $("#iframe1").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name1));
+            $("#iframe1r").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name1) + "&w=254");
+            $("#name2").text(_name2);
+            $("#iframe2").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name2));
+            $("#iframe2r").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name2) + "&w=254");
+            $("#name3").text(_name3);
+            $("#iframe3").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name3));
+            $("#iframe3r").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name3) + "&w=254");
+            $("#name4").text(_name4);
+            $("#iframe4").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name4));
+            $("#iframe4r").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name4) + "&w=254");
+            _checked.push(_name1);
+            _checked.push(_name2);
+            _checked.push(_name3);
+            _checked.push(_name4);
+        }
+
+        function validateOption() {
+            NAME_LENGTH = parseInt($("#length").val()) || 0;
+            if (NAME_LENGTH < 2 || NAME_LENGTH > 6) {
+                alert("이름 길이는 2자에서 6자까지 가능합니다");
+                NAME_LENGTH = 2;
+                $("#length").val(2)
+                return false;
+            }
+
+            HATE_CHOSEONG = [];
+            var _choseong = $("[name=choseong]");
+            for (var i = 0; i < _choseong.length; ++i) {
+                if (_choseong[i].checked) {
+                    HATE_CHOSEONG.push(parseInt(_choseong[i].value));
+                }
+            }
+            if (_choseong.length == HATE_CHOSEONG.length) {
+                alert("적어도 1개의 초성을 사용해야 합니다");
+                HATE_CHOSEONG = [];
+                return false;
+            }
+
+            HATE_JOONGSEONG = [];
+            var _joongseong = $("[name=joongseong]");
+            for (var i = 0; i < _joongseong.length; ++i) {
+                if (_joongseong[i].checked) {
+                    HATE_JOONGSEONG.push(parseInt(_joongseong[i].value));
+                }
+            }
+            if (_joongseong.length == HATE_JOONGSEONG.length) {
+                alert("적어도 1개의 중성을 사용해야 합니다");
+                HATE_JOONGSEONG = [];
+                return false;
+            }
+
+            HATE_JONGSEONG = [];
+            var _jongseong = $("[name=jongseong]");
+            for (var i = 0; i < _jongseong.length; ++i) {
+                if (_jongseong[i].checked) {
+                    HATE_JONGSEONG.push(parseInt(_jongseong[i].value));
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
