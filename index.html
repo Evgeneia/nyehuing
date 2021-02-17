@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Maplestory name generator</title>
+    <title>랜덤 녜힁 제조기 2.0</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -174,7 +174,7 @@
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" value="1" name="joongseong">
+                    <input class="form-check-input" type="checkbox" value="1" name="joongseong" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         ㅐ
                     </label>
@@ -192,7 +192,7 @@
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" value="4" name="joongseong">
+                    <input class="form-check-input" type="checkbox" value="4" name="joongseong" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         ㅓ
                     </label>
@@ -204,7 +204,7 @@
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" value="6" name="joongseong">
+                    <input class="form-check-input" type="checkbox" value="6" name="joongseong" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         ㅕ
                     </label>
@@ -222,7 +222,7 @@
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" value="9" name="joongseong">
+                    <input class="form-check-input" type="checkbox" value="9" name="joongseong" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         ㅘ
                     </label>
@@ -252,7 +252,7 @@
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" value="14" name="joongseong">
+                    <input class="form-check-input" type="checkbox" value="14" name="joongseong" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         ㅝ
                     </label>
@@ -276,7 +276,7 @@
                     </label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" value="18" name="joongseong">
+                    <input class="form-check-input" type="checkbox" value="18" name="joongseong" checked>
                     <label class="form-check-label" for="flexCheckChecked">
                         ㅡ
                     </label>
@@ -488,11 +488,11 @@
     </div>
 
     <script type="text/javascript">
-        var NAME_LENGTH = 2
-        var HATE_CHOSEONG = [1, 4, 8, 10, 13]
-        var HATE_JOONGSEONG = [3, 7, 10, 11, 15, 16, 19]
-        var HATE_JONGSEONG = []
-        var _checked = []
+        var NAME_LENGTH = 2;
+        var HATE_CHOSEONG = [1, 4, 8, 10, 13];
+        var HATE_JOONGSEONG = [3, 7, 10, 11, 15, 16, 19];
+        var HATE_JONGSEONG = [];
+        var _checked = [];
 
         function clearChoseong() {
             var _choseong = $("[name=choseong]");
@@ -523,7 +523,7 @@
                     && !HATE_CHOSEONG.includes(Math.floor(Math.floor(_c / 28) / 21))
                     && !HATE_JOONGSEONG.includes(Math.floor(Math.floor(_c / 28) % 21))) {
                     _name += String.fromCharCode(44032 + _c)
-                    if(_checked.includes(_name)) {
+                    if (_name.length == NAME_LENGTH && _checked.includes(_name)) {
                         _name = "";
                     }
                 }
