@@ -23,11 +23,11 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href=".\index.html">메이플스토리<span class="sr-only">(current)</span></a>
-					</li>
 					<li class="nav-item">
-						<a class="nav-link" href=".\lostark.html">로스트아크</a>
+						<a class="nav-link" href=".\index.html">메이플스토리</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href=".\lostark.html">로스트아크<span class="sr-only">(current)</span></a>
 					</li>
 				</ul>
 			</div>
@@ -43,7 +43,7 @@
 			<div class="collapse card" id="options">
 				<div>
 					<h5>이름 길이:</h5>
-					<input type="number" id="length" class="form-control" step="1" min="2" max="6" value="2" />
+					<input type="number" id="length" class="form-control" step="1" min="2" max="12" value="2" />
 				</div>
 				<div class="row">
 					<div class="col-6">
@@ -476,22 +476,18 @@
 				<div class="col-sm-12 col-md-3">
 					<h1 id="name1"> </h1>
 					<iframe id="iframe1" src=""></iframe>
-					<iframe id="iframe1r" src=""></iframe>
 				</div>
 				<div class="col-sm-12 col-md-3">
 					<h1 id="name2"> </h1>
 					<iframe id="iframe2" src=""></iframe>
-					<iframe id="iframe2r" src=""></iframe>
 				</div>
 				<div class="col-sm-12 col-md-3">
 					<h1 id="name3"> </h1>
 					<iframe id="iframe3" src=""></iframe>
-					<iframe id="iframe3r" src=""></iframe>
 				</div>
 				<div class="col-sm-12 col-md-3">
 					<h1 id="name4"> </h1>
 					<iframe id="iframe4" src=""></iframe>
-					<iframe id="iframe4r" src=""></iframe>
 				</div>
 			</div>
 		</div>
@@ -555,23 +551,19 @@
 			var _name3 = createName();
 			var _name4 = createName();
 			$("#name1").text(_name1);
-			$("#iframe1").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name1));
-			$("#iframe1r").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name1) + "&w=254");
+			$("#iframe1").attr("src", "https://lostark.game.onstove.com/Profile/Character/" + encodeURI(_name1));
 			$("#name2").text(_name2);
-			$("#iframe2").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name2));
-			$("#iframe2r").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name2) + "&w=254");
+			$("#iframe2").attr("src", "https://lostark.game.onstove.com/Profile/Character/" + encodeURI(_name2));
 			$("#name3").text(_name3);
-			$("#iframe3").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name3));
-			$("#iframe3r").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name3) + "&w=254");
+			$("#iframe3").attr("src", "https://lostark.game.onstove.com/Profile/Character/" + encodeURI(_name3));
 			$("#name4").text(_name4);
-			$("#iframe4").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name4));
-			$("#iframe4r").attr("src", "https://m.maplestory.nexon.com/Ranking/World?c=" + encodeURI(_name4) + "&w=254");
+			$("#iframe4").attr("src", "https://lostark.game.onstove.com/Profile/Character/" + encodeURI(_name4));
 		}
 
 		function validateOption() {
 			NAME_LENGTH = parseInt($("#length").val()) || 0;
-			if (NAME_LENGTH < 2 || NAME_LENGTH > 6) {
-				alert("이름 길이는 2자에서 6자까지 가능합니다");
+			if (NAME_LENGTH < 2 || NAME_LENGTH > 12) {
+				alert("이름 길이는 2자에서 12자까지 가능합니다");
 				NAME_LENGTH = 2;
 				$("#length").val(2)
 				return false;
