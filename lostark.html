@@ -571,7 +571,7 @@
 
 			_prefix = $("#prefix").val();
 			_postfix = $("#postfix").val();
-			if (_prefix.length + _postfix.length > NAME_LENGTH) {
+			if (_prefix.length + _postfix.length >= NAME_LENGTH) {
 				alert("접두어와 접미어의 길이가 전체 이름의 길이보다 짧아야 합니다");
 				return false;
 			}
