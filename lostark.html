@@ -57,7 +57,8 @@
 				</div>
 				<div>
 					<h5>사용하지 않을 초성 <button type="button" class="btn btn-secondary btn-sm"
-							onclick="clearChoseong()">초기화</button></h5>
+							onclick="selectAllChoseong()">전부 선택</button> <button type="button"
+							class="btn btn-secondary btn-sm" onclick="clearChoseong()">전부 해제</button></h5>
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="checkbox" value="0" name="choseong">
 						<label class="form-check-label" for="flexCheckChecked">
@@ -175,7 +176,8 @@
 				</div>
 				<div>
 					<h5>사용하지 않을 중성 <button type="button" class="btn btn-secondary btn-sm"
-							onclick="clearJoongseong()">초기화</button></h5>
+							onclick="selectAllJoongseong()">전부 선택</button> <button type="button"
+							class="btn btn-secondary btn-sm" onclick="clearJoongseong()">전부 해제</button></h5>
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="checkbox" value="0" name="joongseong">
 						<label class="form-check-label" for="flexCheckChecked">
@@ -305,7 +307,8 @@
 				</div>
 				<div>
 					<h5>사용하지 않을 종성 <button type="button" class="btn btn-secondary btn-sm"
-							onclick="clearJongseong()">초기화</button></h5>
+							onclick="selectAllJongseong()">전부 선택</button> <button type="button"
+							class="btn btn-secondary btn-sm" onclick="clearJongseong()">전부 해제</button></h5>
 					<div class="form-check form-check-inline">
 						<input class="form-check-input" type="checkbox" value="1" name="jongseong" checked>
 						<label class="form-check-label" for="flexCheckChecked">
@@ -503,6 +506,27 @@
 		var HATE_JONGSEONG = [];
 		var _prefix = "";
 		var _postfix = "";
+
+		function selectAllChoseong() {
+			var _choseong = $("[name=choseong]");
+			for (var i = 0; i < _choseong.length; ++i) {
+				_choseong[i].checked = true;
+			}
+		}
+
+		function selectAllJoongseong() {
+			var _joongseong = $("[name=joongseong]");
+			for (var i = 0; i < _joongseong.length; ++i) {
+				_joongseong[i].checked = true;
+			}
+		}
+
+		function selectAllJongseong() {
+			var _jongseong = $("[name=jongseong]");
+			for (var i = 0; i < _jongseong.length; ++i) {
+				_jongseong[i].checked = true;
+			}
+		}
 
 		function clearChoseong() {
 			var _choseong = $("[name=choseong]");
